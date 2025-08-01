@@ -23,13 +23,16 @@ const TitleCard = ({ title, category }) => {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+      `https://api.themoviedb.org/3/movie/${
+        category ? category : "now_playing"
+      }?language=en-US&page=1`,
       options
     )
       .then((res) => res.json())
       .then((res) => setApiData(res.results))
       .catch((err) => console.error(err));
 
+    console.log("qwdwq");
     cardsRef.current.addEventListener("wheel", handleWheel);
   }, []);
 
