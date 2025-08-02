@@ -6,6 +6,9 @@ import Player from "./pages/Player/Player";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { Routes, Route, useNavigate } from "react-router-dom";
+
+import { ToastContainer, toast } from "react-toastify";
+
 const App = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -21,6 +24,8 @@ const App = () => {
   }, []);
   return (
     <div>
+      <ToastContainer ttheme="dark" />
+
       {/* using routing paths to switch between different pages */}
       <Routes>
         <Route path="/home" element={<Home />} />
