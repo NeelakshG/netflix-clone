@@ -4,9 +4,10 @@ import back_arrow_icon from "../../assets/back_arrow_icon.png";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Player = () => {
-  const navigate = useNavigate();
-  const { id } = useParams();
+  const navigate = useNavigate(); //built in react hook that lets change the page you are in
+  const { id } = useParams(); //taking in the param in the url link
   const [apiData, setApiData] = useState({
+    //setting up state that will be used when fetching data
     name: "",
     key: "",
     published_at: "",
@@ -14,6 +15,7 @@ const Player = () => {
   });
 
   useEffect(() => {
+    //watch for the API request
     const options = {
       method: "GET",
       headers: {
@@ -24,7 +26,7 @@ const Player = () => {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
+      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, //fetch this date, the store it
       options
     )
       .then((res) => res.json())
@@ -32,7 +34,9 @@ const Player = () => {
       .catch((err) => console.error(err));
   }, []);
   return (
+    // setting up the player page
     <div className="player">
+      {/* the back arrow icon */}
       <img
         src={back_arrow_icon}
         alt=""
@@ -40,14 +44,15 @@ const Player = () => {
           navigate("/home");
         }}
       />
+      {/* iframe component is what lets the user see the video directly in the page */}
       <iframe
         width="90%"
         height="90%"
         src={`https://www.youtube.com/embed/${apiData.key}`}
         title="trailer"
-        frameBorder="0"
         allowFullScreen
       ></iframe>
+      {/* video stats in the bottom */}
       <div className="player-info">
         <p>{apiData.published_at.slice(0, 10)}</p>
         <p>{apiData.name}</p>

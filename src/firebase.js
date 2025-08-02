@@ -1,11 +1,11 @@
 import { initializeApp } from "firebase/app";
 import {
-  createUserWithEmailAndPassword,
   getAuth,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-} from "firebase/auth/cordova";
-import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
+} from "firebase/auth";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAZyDT95Q_BBQ2m-aL-wd9av_BJiK8Rl7s",
@@ -22,7 +22,7 @@ const db = getFirestore(app);
 
 const signup = async (name, email, password) => {
   try {
-    const res = await createUserWithEmailAndPassword(auth.email, password);
+    const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
 
     await addDoc(collection(db, "user"), {
@@ -33,7 +33,7 @@ const signup = async (name, email, password) => {
     });
   } catch (error) {
     console.log(error);
-    alert(error);
+    alert(error + "asd");
   }
 };
 
@@ -45,9 +45,7 @@ const login = async (email, password) => {
   }
 };
 
-const logout = () => {
-  signOut;
-  auth;
+const logout = async () => {
+  await signOut(auth);
 };
-
 export { auth, db, login, signup, logout };
