@@ -24,7 +24,7 @@ const Home = () => {
           <div className="hero-btns">
             <button className="btns">
               <img src={play_icon} alt="" />
-              Player
+              Play
             </button>
             <button className="btns dark-btn">
               <img src={info_icon} alt="" />
