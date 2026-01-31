@@ -7,7 +7,7 @@ A fully responsive Netflix-inspired movie streaming frontend built with React, s
 
 ## 🔥 Features
 
-- 🔐 User authentication (Login / Signup) with Firebase Auth
+- 🔐 User authentication (Login / Signup) with Firebase Auth (in progress)
 - 🎞️ Movie data fetched from [The Movie Database (TMDb)](https://www.themoviedb.org/)
 - 🔍 Movie search and filtering
 - 🎬 Hover animations and trailers (optional: YouTube embed)
@@ -18,7 +18,7 @@ A fully responsive Netflix-inspired movie streaming frontend built with React, s
 ## 🚀 Tech Stack
 
 - **Frontend**: React, TailwindCSS, React Router
-- **Backend / Auth / DB**: Firebase (Authentication + Firestore)
+- **Backend / Auth / DB**: Firebase (Authentication + Firestore) (in progress)
 - **API**: [TMDb API](https://developers.themoviedb.org/3)
 - **Deployment**: Vercel / Netlify / Firebase Hosting
 
