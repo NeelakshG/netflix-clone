@@ -1,6 +1,6 @@
 # 🎬 Netflix Clone
 
-A fully responsive Netflix-inspired movie streaming frontend built with React, styled using TailwindCSS, and powered by Firebase for authentication and database functionality.
+A fully responsive Netflix-inspired movie streaming frontend built with React, styled using CSS, and powered by Firebase for authentication and database functionality.
 
 
 ---
@@ -10,7 +10,7 @@ A fully responsive Netflix-inspired movie streaming frontend built with React, s
 - 🔐 User authentication (Login / Signup) with Firebase Auth (in progress)
 - 🎞️ Movie data fetched from [The Movie Database (TMDb)](https://www.themoviedb.org/)
 - 🔍 Movie search and filtering
-- 🎬 Hover animations and trailers (optional: YouTube embed)
+- 🎬 Hover animations and trailers 
 - 📱 Mobile-friendly layout
 
 ---
